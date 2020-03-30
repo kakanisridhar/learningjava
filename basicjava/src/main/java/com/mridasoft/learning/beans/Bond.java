@@ -1,22 +1,13 @@
 package com.mridasoft.learning.beans;
 
-public class Bond {
+public class Bond  extends AbstractSecurity {	
 	
-	String security;
 	int issueDate;
 	
-	public Bond() {
+	public Bond(int f) {
+		issueDate = f;
+	}
 	
-	}
-
-	public String getSecurity() {
-		return security;
-	}
-
-	public void setSecurity(String security) {
-		this.security = security;
-	}
-
 	public int getIssueDate() {
 		return issueDate;
 	}
@@ -26,12 +17,28 @@ public class Bond {
 	}
 
 	@Override
+	public double loanAmount() {
+		
+		return 2;
+	}
+
+	@Override
+	protected String getName() {
+		// TODO Auto-generated method stub
+		return "Bond";
+	}
+	
+	
+	protected String getName(String a) {
+		// TODO Auto-generated method stub
+		return a+"Bond";
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + issueDate;
-		result = prime * result
-				+ ((security == null) ? 0 : security.hashCode());
 		return result;
 	}
 
@@ -46,14 +53,7 @@ public class Bond {
 		Bond other = (Bond) obj;
 		if (issueDate != other.issueDate)
 			return false;
-		if (security == null) {
-			if (other.security != null)
-				return false;
-		} else if (!security.equals(other.security))
-			return false;
 		return true;
 	}
-	
-	
 	
 }
