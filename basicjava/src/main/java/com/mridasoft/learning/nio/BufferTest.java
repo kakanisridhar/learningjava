@@ -33,7 +33,8 @@ public class BufferTest {
 	  {
 		    System.out.println("usecase#"+useCase);
 		  	System.out.println("pos#"+bb.position());
+		  	System.out.println("limit#"+bb.limit());
 		    System.out.println("mark#"+bb.mark());
-		    System.out.println("capacity#"+bb.capacity());
+		    
 	  }
 }
