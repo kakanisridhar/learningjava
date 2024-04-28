@@ -1,19 +1,18 @@
 package com.mridasoft.learning.generics;
 
 import java.io.Serializable;
-
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
 
 public class Entity<T extends Serializable> {
 	
-	protected DateTime creationTime;
-    protected DateTime modificationTime;
+	protected LocalDateTime creationTime;
+    protected LocalDateTime modificationTime;
     
     protected T id;
     
     public Object readResolve() {
         if (this.creationTime == null) {
-            this.creationTime = new DateTime();
+            this.creationTime = LocalDateTime.now();
             this.modificationTime = creationTime;
         }
 
@@ -29,19 +28,19 @@ public class Entity<T extends Serializable> {
         this.id = id;
     }
 
-	public DateTime getCreationTime() {
+	public LocalDateTime getCreationTime() {
 		return creationTime;
 	}
 
-	public void setCreationTime(DateTime creationTime) {
+	public void setCreationTime(LocalDateTime creationTime) {
 		this.creationTime = creationTime;
 	}
 
-	public DateTime getModificationTime() {
+	public LocalDateTime getModificationTime() {
 		return modificationTime;
 	}
 
-	public void setModificationTime(DateTime modificationTime) {
+	public void setModificationTime(LocalDateTime modificationTime) {
 		this.modificationTime = modificationTime;
 	}
     

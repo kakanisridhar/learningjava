@@ -1,1 +1,0 @@
-Eventbus is using thread of publisher to invoke subscription calls 
