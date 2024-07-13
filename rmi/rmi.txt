@@ -1,5 +1,0 @@
-1. build - mvn clean install
-2. transfer jars to some server along with sh and policy files 
-3. Execute shell script  is - . run
-4. run client as java program
-  
